@@ -2,11 +2,11 @@ name: Keep ChainArena Alive
 
 on:
   schedule:
-    - cron: "*/30 * * * *"  # every 30 minutes
+    - cron: "*/15 * * * *"  # every 15 minutes UTC
 
 jobs:
   keepalive:
     runs-on: ubuntu-latest
     steps:
-      - name: Curl to keep alive
-        run: curl https://chainarena.onrender.com/tournaments
+      - name: Curl to keep ChainArena alive
+        run: curl --silent --show-error https://chainarena.onrender.com/tournaments
