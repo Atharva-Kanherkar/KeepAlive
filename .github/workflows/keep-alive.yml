@@ -1,0 +1,12 @@
+name: Keep ChainArena Alive
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # every 30 minutes
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl to keep alive
+        run: curl https://chainarena.onrender.com/tournaments
